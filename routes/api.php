@@ -17,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//ver todas las boletas
+Route::get('boletas/verBoletas','App\Http\Controllers\BoletaController@index');
+
+//registrar boleta
+Route::post('boletas/registrarBoleta','App\Http\Controllers\BoletaController@store');
+
+//actualizar boleta
+Route::put('boletas/actualizarBoleta','App\Http\Controllers\BoletaController@update');
+
+//eliminar registro de boleta
+Route::delete('boletas/eliminarBoleta/{id}','App\Http\Controllers\BoletaController@destroy');
